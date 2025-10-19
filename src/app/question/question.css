@@ -1,0 +1,14 @@
+.question-box {
+  background-color: #374151; /* dark slate */
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: #f9fafb;
+  font-size: 0.9rem;
+}
+
+.question-box:hover {
+  background-color: #4b5563; /* lighter on hover */
+}
