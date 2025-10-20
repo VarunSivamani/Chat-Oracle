@@ -5,10 +5,17 @@ import { Sidebar } from './sidebar/sidebar';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, Home, Sidebar],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class App {
   protected readonly title = signal('chat-oracle');
+  selectedQuery: string = '';
+
+  // Handle event from Sidebar → Question
+  onQuerySelected(query: string) {
+    this.selectedQuery = query;
+  }
 }

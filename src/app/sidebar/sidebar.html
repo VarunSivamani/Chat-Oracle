@@ -13,31 +13,20 @@
   <!-- Settings -->
   <section class="settings">
     <h1>Settings</h1>
-
     <div class="setting-item">
       <label for="theme"><h4>Theme</h4></label>
-      <select id="theme" name="theme">
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
+      <select id="theme" name="theme" [(ngModel)]="selectedTheme">
+        <option *ngFor="let theme of themes" [value]="theme">{{ theme }}</option>
       </select>
     </div>
 
     <div class="setting-item">
       <label for="model-selection"><h4>Model</h4></label>
-      <select id="model-selection" name="model-selection">
-        <option value="openai/gpt-oss-20b:free">openai/gpt-oss-20b:free</option>
-        <option value="qwen/qwen3-coder:free">qwen/qwen3-coder:free</option>
-        <option value="deepseek/deepseek-chat-v3.1:free">deepseek/deepseek-chat-v3.1:free</option>
+      <select id="model-selection" name="model-selection" [(ngModel)]="selectedModel">
+        <option *ngFor="let model of models" [value]="model">{{ model }}</option>
       </select>
     </div>
   </section>
-
-  <!-- Query Settings -->
-  <!-- <section class="query-settings">  
-    <h1>Query Settings</h1>
-    <label for="limit">Default Limit</label>
-    <input type="number" name="limit" id="limit" value="100">
-  </section> -->
 
   <section class="query-settings">  
     <h1>Query Settings</h1>
@@ -49,20 +38,13 @@
 
   </section>
 
-  <!-- Example Queries -->
-  <!-- <section class="example-queries">
-    <h1>Example Queries</h1>
-    <ul>
-      <li>Show me all users</li>
-      <li>What are the top 10 best-selling books</li>
-    </ul>
-  </section> -->
-
-  <section class="example-queries">
-    <h1>Example Queries</h1>
-    <app-question text="Show me all users"></app-question>
-    <app-question text="What are the top 10 best-selling books"></app-question>
-    <app-question text="List all active sessions"></app-question>
-  </section>
+<section class="example-queries">
+  <h1>Example Queries</h1>
+  <app-question
+    *ngFor="let query of exampleQueries"
+    [text]="query"
+    (querySelected)="querySelected.emit($event)">
+  </app-question>
+</section>
 
 </div>

@@ -1,4 +1,149 @@
 .home-container {
-  padding: 2rem;
   flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #111827;
+  color: #f9fafb;
+  padding: 1.5rem 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* --- Database section --- */
+.db-section {
+  width: 50%;
+  min-width: 500px;
+  margin-bottom: 1rem;
+}
+
+.db-connection {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.db-connection input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+.connect-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.connect-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Status display */
+.status-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.status-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.status-text {
+  font-size: 0.95rem;
+  color: #d1d5db;
+}
+
+/* --- Query section --- */
+.query-section textarea {
+  width: 100%;
+  height: 120px;
+  resize: none;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem;
+  background-color: #1f2937;
+  color: #f9fafb;
+  font-family: monospace;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+/* --- Action buttons --- */
+.action-section {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.execute-btn,
+.clear-btn {
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.execute-btn {
+  background-color: #10b981;
+  color: #ffffff;
+}
+
+.execute-btn:hover {
+  background-color: #059669;
+}
+
+.clear-btn {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.clear-btn:hover {
+  background-color: #dc2626;
+}
+
+/* --- Results section --- */
+.results-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.results-table-wrapper {
+  flex: 1;
+  overflow: auto;
+  border-radius: 6px;
+  background-color: #1f2937;
+  padding: 0.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #f9fafb;
+}
+
+th, td {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #374151;
+}
+
+th {
+  background-color: #374151;
+  position: sticky;
+  top: 0;
 }

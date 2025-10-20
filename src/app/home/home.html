@@ -1,4 +1,45 @@
 <div class="home-container">
-  <h1>Welcome to the Dashboard</h1>
-  <p>This is the main content area.</p>
+
+  <!-- Database Status Section -->
+  <section class="db-section">
+    <h2>Database Status</h2>
+
+    <!-- Status display -->
+    <div class="status-container">
+      <img [src]="statusImage" alt="status" class="status-icon" />
+      <span class="status-text">{{ statusText }}</span>
+    </div>
+  </section>
+
+  <!-- Query Input Section -->
+  <section class="query-section">
+    <h2>SQL Query</h2>
+    <textarea [(ngModel)]="queryText" placeholder="Write your SQL query here..."></textarea>
+  </section>
+
+  <!-- Action Buttons (Left aligned) -->
+  <section class="action-section">
+    <button class="execute-btn" (click)="executeQuery()">Execute</button>
+    <button class="clear-btn" (click)="clearQuery()">Clear</button>
+  </section>
+
+  <!-- Results Section -->
+  <section class="results-section" *ngIf="queryResults.length > 0">
+    <h2>Results</h2>
+    <div class="results-table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th *ngFor="let col of tableColumns">{{ col }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of queryResults">
+            <td *ngFor="let col of tableColumns">{{ row[col] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
 </div>

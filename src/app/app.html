@@ -1,4 +1,4 @@
 <div class="app-layout">
-  <app-sidebar></app-sidebar>
-  <app-home></app-home>
+  <app-sidebar (querySelected)="onQuerySelected($event)"></app-sidebar>
+  <app-home [queryText]="selectedQuery"></app-home>
 </div>

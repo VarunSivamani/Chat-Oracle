@@ -1,15 +1,20 @@
-import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-question',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './question.html',
-  styleUrl: './question.css'
+  styleUrls: ['./question.css']
 })
 export class Question {
-  @Input() text: string = ''; // question text
+  @Input() text: string = '';
+  @Output() querySelected = new EventEmitter<string>();
 
   handleClick() {
-    console.log(this.text); // print question text on click
+    console.log('Clicked query:', this.text);
+    this.querySelected.emit(this.text);
   }
 }
