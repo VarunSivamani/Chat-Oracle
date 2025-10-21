@@ -20,7 +20,7 @@
   width: 280px;
   flex-shrink: 0; 
   height: 100vh;
-}
+} */
 
 app-home {
   flex: 1; 
@@ -28,4 +28,4 @@ app-home {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-} */
+}
